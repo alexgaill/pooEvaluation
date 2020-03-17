@@ -1,0 +1,261 @@
+a{
+  text-decoration: none !important;
+  transition: all 0.3s ease;
+}
+a:hover{
+  opacity: 0.5;
+}
+ul{
+  position: relative;
+  list-style-type: none;
+  padding: 15px;
+}
+hr{
+  border-bottom: 1px solid black;
+  background: none;
+  margin: 20px;
+}
+main{
+  position: relative;
+  margin: 30px 7%;
+  width: 86%;
+  display: flex;
+  flex-direction: column;
+}
+#color_brick{
+  transition: all 1.2s ease;
+}
+#color_brick:hover{
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both !important;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+#admin_block{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 25px;
+    right: 50px;
+}
+#admin_block a{
+  margin: 0 10px;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+
+#list_section{
+  width: 100%;
+  display: flex;
+  transition: all 0.4s ease;
+}
+#list_section>nav{
+  width: 20vw;
+  margin-right: 3vw;
+  padding-right: 3vw;
+  border-right: 1px solid #999;
+  display: flex;
+  flex-direction: column;
+}
+#list_section>nav a{
+  font-size: 1.5rem;
+  width: 100%;
+  display: block;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+#list_section>nav a, #list_section>nav h2{
+  text-align: right;
+  text-transform: capitalize;
+}
+#list_section>div{
+  position: relative;
+  width: 69vw;
+}
+#list_section>div>#color_brick{
+  position: absolute;
+  height: 45px;
+  width: 75%;
+  background: transparent;
+}
+h2{
+  padding: 15px;
+  padding-top: 50px;
+}
+.article_list_item{
+  padding: 15px;
+  display: inline-block;
+  transition: all 0.3s ease;
+
+}
+.item_head{
+  display: flex;
+  align-items: center;
+}
+.article_list_item a{
+  color: rgba(55, 174, 219, 1)
+}
+.article_list_item:hover{
+  background-color: rgba(0, 0, 0, 0.02);
+}
+.title_link{
+  text-transform: uppercase;
+}
+.article_list_item form{
+  display: flex;
+  align-items: center;
+}
+.article_list_item form input[type='submit']{
+  height: 20px;
+  width: 20px;
+  margin: 0 5px;
+  border: none;
+  transition: all 0.3s ease;
+}
+.article_list_item form input[type='submit']:hover{
+  opacity: 0.5;
+}
+#update_button{
+  background: transparent;
+  background: url('https://www.icone-png.com/png/18/17532.png') no-repeat center;
+  background-size: contain;
+}
+#delete_button{
+  background: transparent;
+  background: url('http://cdn.onlinewebfonts.com/svg/img_398867.png') no-repeat center;
+  background-size: contain;
+}
+
+/*
+**
+** PAGE : Single
+**
+ */
+#article_section_wrapper{
+  display: flex;
+  position: relative;
+}
+#article_section_wrapper>#color_brick{
+  position: absolute;
+  height: 100%;
+  max-height: 50vh;
+  width: 35px;
+  background: transparent;
+  left: 2vw;
+}
+#article_section{
+  margin: 0 5vw;
+  padding: 0 5vw;
+  width: 100%;
+}
+#article_title{
+  text-transform: capitalize;
+}
+#article_subtitle{
+  display: flex;
+  align-items: center;
+  font-size: 1.3em;
+}
+#article_body{
+  margin-top: 20px;
+  font-size: 1.1em;
+  text-indent: 2em;
+}
+
+
+/*
+**
+** PAGE : Admin (login.php)
+**
+ */
+
+#admin_section_wrapper{
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  width: 70vw;
+}
+#admin_section_wrapper #color_brick{
+  position: fixed;
+  height: 32vh;
+  width: 18vh;
+  top: 15vh;
+  right: 25vw;
+}
+#admin_section{
+
+}
+#admin_headblock{
+  margin-left: 30px;
+}
+#admin_headblock hr{
+  width: 25vw;
+  margin-left: 0px;
+}
+.err{
+  color: red;
+}
+.red_field{
+  border: 1px solid red;
+  background-color: rgba(255, 0, 0, 0.05);
+}
+.red_field:focus{
+  background-color: transparent !important;
+}
+#admin_section_wrapper form{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#admin_section_wrapper form input, form select{
+  margin: 10px 0px;
+  padding: 4px;
+  width: 250px;
+}
+
+/**
+ *
+ * PAGE : logged admin (crud.php)
+ *
+ */
+
+#admin_section_wrapper.logged #color_brick{
+  top: auto;
+  bottom: 10vh;
+}
+.logged #admin_section{
+  width: 100%;
+}
+.logged #admin_body{
+  display: flex;
+  justify-content: space-around;
+}
+.logged textarea{
+  width: 45vw;
+  min-height: 200px;
+}
+.logged form option{
+  text-transform: capitalize
+}
+
+/**
+ *
+ * ANIMATION
+ *
+ */
+
+ @keyframes shake {
+   10%, 90% {
+     transform: translate3d(-1px, 0, 0);
+   }
+   20%, 80% {
+     transform: translate3d(1px, 0, 0);
+   }
+   30%, 50%, 70% {
+     transform: translate3d(-2px, 0, 0);
+   }
+   40%, 60% {
+     transform: translate3d(3px, 0, 0);
+   }
+ }
