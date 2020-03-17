@@ -2,23 +2,24 @@
 
 namespace App\Controller;
 
-
-
+use App\Model\ArticleModel;
 
 class ArticleController extends AppController{
 
   public function __construct(){
     $this->loadModel('Article');
   }
-  /**
-   * [retrieve the entire articles index and send to render]
-   * @return [void]
-   */
-  public function home($category = null, $notification = false){
 
-  
+  /**
+   * 
+   */
+  public function home(){
+
+    $articleModel = new ArticleModel();
+    $articles = $articleModel->queryArticles();
+
     return $this->render('global.home',
-      []
+      ['articles' => $articles]
     );
   }
   
