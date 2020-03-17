@@ -9,9 +9,9 @@ class ArticleModel extends Model{
   public function queryArticles(){
     return $this->db->query("SELECT * FROM articles", false);
   }
-  // public function queryArticleById($id){
-  //   return $this->db->query("SELECT * FROM articles WHERE id=$id", true);
-  // }
+  public function queryArticleById($id){
+    return $this->db->query("SELECT * FROM articles WHERE article_id= $id", true);
+  }
   // public function queryArticlesByCategory($id){
   //   return $this->db->query("SELECT * FROM articles WHERE category_id=$id");
   // }

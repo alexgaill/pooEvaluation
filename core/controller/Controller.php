@@ -3,7 +3,7 @@ namespace Core\Controller;
 
 class Controller{
 
-  public function render($view, $params){
+  public function render($view, $params = []){
     $pathView = str_replace(".", "/", $view);
 
     ob_start();

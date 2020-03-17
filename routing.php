@@ -9,9 +9,11 @@ use App\Controller\ArticleController;
 // HOME PAGE
 if ((isset($_GET["page"]) && $_GET["page"] == 'home') || !isset($_GET["page"])){
   $result = new ArticleController();
-  if(isset($_GET["category"])){
-    $result->home($_GET["category"]);
-  }else{
-    $result->home();
-  }
+  $result->home();
+}
+
+// SINGLE PAGE
+if ((isset($_GET["page"]) && $_GET["page"] == 'single' && isset($_GET["id"]))){
+  $result = new ArticleController();
+  $result->single();
 }
