@@ -12,9 +12,10 @@ class ArticleModel extends Model{
   public function queryArticleById($id){
     return $this->db->query("SELECT * FROM articles WHERE article_id= $id", true);
   }
-  // public function queryArticlesByCategory($id){
-  //   return $this->db->query("SELECT * FROM articles WHERE category_id=$id");
-  // }
+
+  public function queryArticlesByCategory($id){
+    return $this->db->query("SELECT * FROM articles WHERE categorie_id=$id");
+  }
 
   // public function saveArticle($article){
   //   return $this->db->save("INSERT INTO articles (title, body, date, category_id) VALUES (:title, :body, :date, :category_id)",

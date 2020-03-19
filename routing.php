@@ -17,3 +17,15 @@ if ((isset($_GET["page"]) && $_GET["page"] == 'single' && isset($_GET["id"]))){
   $result = new ArticleController();
   $result->single();
 }
+
+// SINGLE CATEGORIE PAGE
+if ((isset($_GET["page"]) && $_GET["page"] == 'categorie' && isset($_GET["id"]))){
+  $result = new ArticleController();
+  $result->singleCat();
+}
+
+// AJOUTER COMMENTAIRE
+if ((isset($_GET["page"]) && $_GET["page"] == 'newCom')){
+  $result = new ArticleController();
+  $result->newCom();
+}

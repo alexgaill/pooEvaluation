@@ -10,4 +10,9 @@ class CategorieModel extends Model
     {
         return $this->db->query("SELECT * FROM categories", false);
     }
+
+    public function find($id)
+    {
+        return $this->db->query("SELECT * FROM categories WHERE categorie_id=". $id , true);
+    }
 }
