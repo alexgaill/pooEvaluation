@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
     <link rel="stylesheet" href="public/style/main.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -49,5 +50,5 @@
       <?= $content ?>
     </main>
 </body>
-
+<script src="public/js/main.js"></script>
 </html>

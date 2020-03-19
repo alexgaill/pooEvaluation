@@ -29,3 +29,9 @@ if ((isset($_GET["page"]) && $_GET["page"] == 'newCom')){
   $result = new ArticleController();
   $result->newCom();
 }
+
+// RECUPERER COMMENTAIRE
+if ((isset($_GET["page"]) && $_GET["page"] == 'getCom' && isset($_GET["id"]))){
+  $result = new ArticleController();
+  $result->getCom();
+}

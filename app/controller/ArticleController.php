@@ -34,12 +34,8 @@ class ArticleController extends AppController{
       $articleModel = new ArticleModel();
       $article = $articleModel->queryArticleById($_GET["id"]);
 
-      $comModel = new CommentairesModel();
-      $commentaires = $comModel->find($_GET["id"]);
-
       return $this->render('global.single', [
-        'article' => $article, 
-        "commentaires" => $commentaires
+        'article' => $article
         ]);
   }
   
@@ -65,6 +61,15 @@ class ArticleController extends AppController{
       ':content' => $_POST["content"],
       ':article_id' => $_POST["article_id"]
     ]);
-    header("Location: index.php?page=single&id=".$_POST["article_id"]);
+
+    echo json_encode("ok");
+  }
+  
+  public function getCom()
+  {
+    $comModel = new CommentairesModel();
+    $commentaires = $comModel->find($_GET["id"]);
+    
+    echo json_encode($commentaires);
   }
 }
